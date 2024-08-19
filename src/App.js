@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Inventory from './components/Inventory';
+import AddItem from './components/AddItem';
 
 function App() {
   return (
