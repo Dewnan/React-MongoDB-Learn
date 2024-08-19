@@ -1,10 +1,12 @@
 import './App.css';
-import Head from './components/head';
+import Header from './components/Header';
+import Inventory from './components/Inventory';
 
 function App() {
   return (
     <div className="App">
-      <Head />
+      <Header />
+      <Inventory />
     </div>
   );
 }
