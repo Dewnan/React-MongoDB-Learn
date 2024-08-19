@@ -1,8 +1,8 @@
 import React from "react";
 
 const Header = () => (
-    <div className="head">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div className="inv_table">
+        <nav className="navbar navbar-dark navbar-expand-lg">
             <div className="container-fluid">
                 <div className="navbar-collapse">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -10,7 +10,7 @@ const Header = () => (
                             <a className="nav-link" href="#">Inventory</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Add Items</a>
+                            <a className="nav-link" href="#">Loyalty Customer</a>
                         </li>
                     </ul>
                 </div>
@@ -23,12 +23,13 @@ const Header = () => (
                             height="30"
                             alt="Profile Icon"
                             loading="lazy"
-                        />
-                    </a>
+                        /> </a>
                 </div>
             </div>
         </nav>
+        <br></br><br></br>
     </div>
+
 );
 
 export default Header;

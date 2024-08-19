@@ -12,28 +12,25 @@ const Inventory = () => {
 
     return (
         <div class="inv">
-            <h1>Inventory Items</h1>
-            <div class="container table-responsive h-100 mask d-flex align-items-center row justify-content-center col-12">
-                <table class="table table-dark table-bordered mb-0">
+            <div className="container table-responsive mask d-flex align-items-center justify-content-center">
+                <table className="table table-dark table-bordered mb-0">
                     <thead>
                         <tr>
-                            <th scope="col">EMPLOYEES</th>
-                            <th scope="col">POSITION</th>
-                            <th scope="col">CONTACTS</th>
-                            <th scope="col">AGE</th>
-                            <th scope="col">ADDRESS</th>
-                            <th scope="col">SALARY</th>
+                            <th>Item No:</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Tiger Nixon</th>
-                            <td>System Architect</td>
-                            <td>tnixon12@example.com</td>
-                            <td>61</td>
-                            <td>Edinburgh</td>
-                            <td>$320,800</td>
-                        </tr>
+                    <tbody className="table-group-divider table-divider-color">
+                        {items.map(item => (
+                            <tr key={item._id}>
+                                <td>{item.item_id}</td>
+                                <td>{item.item_name}</td>
+                                <td>{item.price}</td>
+                                <td>{item.stock}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
