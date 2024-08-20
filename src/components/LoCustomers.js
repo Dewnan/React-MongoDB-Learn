@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import AddCustomer from "./AddCustomer";
+import RemoveCustomer from "./RemoveCustomer";
 
 const Customers = () => {
-    const [customers, setItems] = useState([]);
+    const [customers, setCustomer] = useState([]);
     const [showEditForm, setShowEditForm] = useState(false);
 
     const handleEditClick = () => {
@@ -12,7 +14,7 @@ const Customers = () => {
     useEffect(() => {
         fetch('http://localhost:5000/api/customers')
             .then(response => response.json())
-            .then(data => setItems(data))
+            .then(data => setCustomer(data))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
@@ -22,18 +24,18 @@ const Customers = () => {
                 <table className="table table-dark table-bordered">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Contact Number</th>
                             <th>Points</th>
                         </tr>
                     </thead>
                     <tbody className="table-group-divider table-divider-color">
                         {customers.map(customer => (
                             <tr key={customer._id}>
-                                <td>{customer.customer.name}</td>
-                                <td>{customer.customer.mail}</td>
-                                <td>Rs: {customer.number}</td>
+                                <td>{customer.customer_id}</td>
+                                <td>{customer.customer_name}</td>
+                                <td>{customer.mail}</td>
                                 <td>{customer.points}</td>
                             </tr>
                         ))}
@@ -43,8 +45,8 @@ const Customers = () => {
             <div className=" justify-content-end mb-3 ms-3">
                 <button type="button" className="btn btn-primary" onClick={handleEditClick}> {showEditForm ? "Done" : "Edit"} </button>
             </div>
-            {showEditForm && <AddItem />}
-            {showEditForm && <DeleteItem />}
+            {showEditForm && <AddCustomer />}
+            {showEditForm && <RemoveCustomer />}
         </div>
     );
 };
