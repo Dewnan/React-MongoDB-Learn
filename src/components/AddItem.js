@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AddItem = () => {
     const [item, setItem] = useState({
@@ -73,10 +73,10 @@ const AddItem = () => {
                     </div>
                     <div className="col-md-3 mb-2">
                         <input
-                            type="number"
+                            type="text"
                             className="form-control form-control-sm"
                             placeholder="Quantity"
-                            name="Quantity"
+                            name="stock"
                             value={item.stock}
                             onChange={handleChange}
                             required
