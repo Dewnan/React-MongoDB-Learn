@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { itemsAPI } from "./apiConfig";
 
 const AddItem = () => {
     const [item, setItem] = useState({
@@ -18,7 +19,7 @@ const AddItem = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/api/items', {
+        fetch(itemsAPI, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -83,7 +84,7 @@ const AddItem = () => {
                         />
                     </div>
                 </div>
-                <button type="submit" className="btn btn-primary btn-sm mt-2 mb-2 me-2">Add Item</button>
+                <button type="submit" className="btn btn-primary btn-sm mt-2 mb-2 me-2" >Add Item</button>
             </form>
         </div>
     );

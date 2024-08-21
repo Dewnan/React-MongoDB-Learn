@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { customersAPI } from "./apiConfig";
 
 const AddCustomer =()=> {
 
@@ -18,7 +19,7 @@ const AddCustomer =()=> {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/api/customers', {
+        fetch(customersAPI, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

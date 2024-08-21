@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddItem from "./AddItem";
 import DeleteItem from "./DeleteItem";
+import { itemsAPI } from "./apiConfig";
 
 const Inventory = () => {
     const [items, setItems] = useState([]);
@@ -12,7 +13,7 @@ const Inventory = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/items')
+        fetch(itemsAPI)
             .then(response => response.json())
             .then(data => setItems(data))
             .catch(error => console.error('Error fetching data:', error));

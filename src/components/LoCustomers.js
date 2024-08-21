@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddCustomer from "./AddCustomer";
 import RemoveCustomer from "./RemoveCustomer";
+import { customersAPI } from "./apiConfig";
 
 const Customers = () => {
     const [customers, setCustomer] = useState([]);
@@ -12,7 +13,7 @@ const Customers = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/customers')
+        fetch(customersAPI)
             .then(response => response.json())
             .then(data => setCustomer(data))
             .catch(error => console.error('Error fetching data:', error));

@@ -8,13 +8,13 @@ const Header = ({ onInventoryClick, onCustomerClick }) => {
                     <div className="navbar-collapse">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={onInventoryClick}>
+                                <a className="nav-link" href="/inventory" onClick={onInventoryClick}>
                                     Inventory
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={onCustomerClick}>
-                                    Loyalty Customer
+                                <a className="nav-link" href="/customers" onClick={onCustomerClick}>
+                                    Loyalty Customers
                                 </a>
                             </li>
                         </ul>

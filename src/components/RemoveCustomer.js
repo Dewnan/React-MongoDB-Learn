@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { customersAPI } from './apiConfig';
 
 
 const RemoveCustomer = () => {
@@ -11,7 +12,7 @@ const RemoveCustomer = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/customers/${customer_id}`, {
+            const response = await fetch(`${customersAPI}${customer_id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

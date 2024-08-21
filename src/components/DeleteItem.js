@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { itemsAPI } from './apiConfig';
 
 const DeleteItem = () => {
 
@@ -9,9 +9,9 @@ const DeleteItem = () => {
         setItemId(e.target.value);
     };
 
-    const handleDelete = async() =>{
+    const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/items/${itemId}`, {
+            const response = await fetch(`${itemsAPI}${itemId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -19,14 +19,14 @@ const DeleteItem = () => {
             });
 
             if (response.ok) {
-                alert('Item deleted successfully');
+                alert('Item removed successfully');
                 setItemId('');
             } else {
-                alert('Failed to delete item');
+                alert('Failed to remove item');
             }
         } catch (err) {
-            console.error('Error deleting item:', err);
-            alert('An error occurred while deleting the item');
+            console.error('Error removing item:', err);
+            alert('An error occurred while removing the item');
         }
     };
 
